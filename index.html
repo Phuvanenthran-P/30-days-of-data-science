@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Day Data Science Learning Path</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="one.png" alt="30-Day Data Science Learning Path Logo">
+            <h1>30-Day Data Science Learning Path</h1>
+        </div>
+    </header>
+    <div class="calendar-container">
+        <div class="calendar">
+
+            <!-- Example for Day 1 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 1</h2>
+                    <div class="date" id="date-day1"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day1-task1"> <label for="day1-task1">Basic algebra and calculus
+                                (1.5 hours)</label></li>
+                        <li><input type="checkbox" id="day1-task2"> <label for="day1-task2">Descriptive statistics
+                                (mean, median, mode, variance) (1.5 hours)</label></li>
+                        <li><input type="checkbox" id="day1-task3"> <label for="day1-task3">Python basics (syntax, data
+                                types) (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Repeat for each day -->
+            <!-- Day 2 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 2</h2>
+                    <div class="date" id="date-day2"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day2-task1"> <label for="day2-task1">Probability basics
+                                (distributions, conditional probability) (1.5 hours)</label></li>
+                        <li><input type="checkbox" id="day2-task2"> <label for="day2-task2">Introduction to hypothesis
+                                testing (1 hour)</label></li>
+                        <li><input type="checkbox" id="day2-task3"> <label for="day2-task3">Python control structures
+                                (loops, conditionals) (3.5 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Add similar blocks for each day from Day 3 to Day 30 -->
+            <!-- Day 3 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 3</h2>
+                    <div class="date" id="date-day3"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day3-task1"> <label for="day3-task1">Pandas (dataframes, series)
+                                (3 hours)</label></li>
+                        <li><input type="checkbox" id="day3-task2"> <label for="day3-task2">Numpy (arrays, basic linear
+                                algebra operations) (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 4</h2>
+                    <div class="date" id="date-day4"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day4-task1"> <label for="day4-task1">Matplotlib & Seaborn (basic
+                                plotting) (1.5 hours)</label></li>
+                        <li><input type="checkbox" id="day4-task2"> <label for="day4-task2">Data cleaning (handling
+                                missing values, normalization) (2.5 hours)</label></li>
+                        <li><input type="checkbox" id="day4-task3"> <label for="day4-task3">Encoding categorical
+                                variables (2 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 5</h2>
+                    <div class="date" id="date-day5"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day5-task1"> <label for="day5-task1">Introduction to machine
+                                learning (3 hours)</label></li>
+                        <li><input type="checkbox" id="day5-task2"> <label for="day5-task2">CRISP-DM process &
+                                understanding data types (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 6 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 6</h2>
+                    <div class="date" id="date-day6"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day6-task1"> <label for="day6-task1">Git basics (version control)
+                                (2 hours)</label></li>
+                        <li><input type="checkbox" id="day6-task2"> <label for="day6-task2">Practice coding in Jupyter
+                                Notebooks (4 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 7</h2>
+                    <div class="date" id="date-day7"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day7-task1"> <label for="day7-task1">Review and practice
+                                exercises for Week 1 concepts (6 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 8 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 8</h2>
+                    <div class="date" id="date-day8"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day8-task1"> <label for="day8-task1">Probability distributions
+                                (Normal, Binomial, Poisson) (3 hours)</label></li>
+                        <li><input type="checkbox" id="day8-task2"> <label for="day8-task2">Inferential statistics
+                                (confidence intervals, t-tests) (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 9 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 9</h2>
+                    <div class="date" id="date-day9"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day9-task1"> <label for="day9-task1">Linear regression (3
+                                hours)</label></li>
+                        <li><input type="checkbox" id="day9-task2"> <label for="day9-task2">Logistic regression (3
+                                hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 10 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 10</h2>
+                    <div class="date" id="date-day10"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day10-task1"> <label for="day10-task1">Decision trees and random
+                                forests (3 hours)</label></li>
+                        <li><input type="checkbox" id="day10-task2"> <label for="day10-task2">K-means clustering (3
+                                hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 11 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 11</h2>
+                    <div class="date" id="date-day11"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day11-task1"> <label for="day11-task1">PCA (Principal Component
+                                Analysis) (3 hours)</label></li>
+                        <li><input type="checkbox" id="day11-task2"> <label for="day11-task2">Cross-validation and model
+                                evaluation (confusion matrix, ROC-AUC) (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 12 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 12</h2>
+                    <div class="date" id="date-day12"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day12-task1"> <label for="day12-task1">Feature engineering
+                                (selection, extraction) (3 hours)</label></li>
+                        <li><input type="checkbox" id="day12-task2"> <label for="day12-task2">SQL basics (queries,
+                                joins) (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 13 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 13</h2>
+                    <div class="date" id="date-day13"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day13-task1"> <label for="day13-task1">Advanced data
+                                visualization with Plotly (3 hours)</label></li>
+                        <li><input type="checkbox" id="day13-task2"> <label for="day13-task2">Introduction to Apache
+                                Spark (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 14 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 14</h2>
+                    <div class="date" id="date-day14"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day14-task1"> <label for="day14-task1">Build a small end-to-end
+                                ML project using real data (6 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 15 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 15</h2>
+                    <div class="date" id="date-day15"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day15-task1"> <label for="day15-task1">Ensemble methods
+                                (Boosting, Bagging) (3 hours)</label></li>
+                        <li><input type="checkbox" id="day15-task2"> <label for="day15-task2">NLP basics (text
+                                preprocessing, sentiment analysis) (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 16 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 16</h2>
+                    <div class="date" id="date-day16"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day16-task1"> <label for="day16-task1">Time series analysis
+                                (ARIMA, forecasting) (3 hours)</label></li>
+                        <li><input type="checkbox" id="day16-task2"> <label for="day16-task2">Model interpretability
+                                (SHAP, LIME) (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 17 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 17</h2>
+                    <div class="date" id="date-day17"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day17-task1"> <label for="day17-task1">Introduction to neural
+                                networks (3 hours)</label></li>
+                        <li><input type="checkbox" id="day17-task2"> <label for="day17-task2">CNNs for image processing
+                                (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 18 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 18</h2>
+                    <div class="date" id="date-day18"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day18-task1"> <label for="day18-task1">RNNs for sequential data
+                                (3 hours)</label></li>
+                        <li><input type="checkbox" id="day18-task2"> <label for="day18-task2">Transfer learning basics
+                                (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 19 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 19</h2>
+                    <div class="date" id="date-day19"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day19-task1"> <label for="day19-task1">TensorFlow basics (3
+                                hours)</label></li>
+                        <li><input type="checkbox" id="day19-task2"> <label for="day19-task2">Keras basics (3
+                                hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 20 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 20</h2>
+                    <div class="date" id="date-day20"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day20-task1"> <label for="day20-task1">Work on a deep learning
+                                project (e.g., image classification) (6 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 21 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 21</h2>
+                    <div class="date" id="date-day21"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day21-task1"> <label for="day21-task1">Review and practice
+                                exercises for Week 3 concepts (6 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 22 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 22</h2>
+                    <div class="date" id="date-day22"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day22-task1"> <label for="day22-task1">Introduction to cloud
+                                platforms (AWS, Google Cloud) (3 hours)</label></li>
+                        <li><input type="checkbox" id="day22-task2"> <label for="day22-task2">Building and deploying
+                                models with Flask (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 23 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 23</h2>
+                    <div class="date" id="date-day23"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day23-task1"> <label for="day23-task1">Docker basics (3
+                                hours)</label></li>
+                        <li><input type="checkbox" id="day23-task2"> <label for="day23-task2">Kubernetes basics (3
+                                hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 24 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 24</h2>
+                    <div class="date" id="date-day24"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day24-task1"> <label for="day24-task1">Building ETL pipelines
+                                (Apache Airflow) (3 hours)</label></li>
+                        <li><input type="checkbox" id="day24-task2"> <label for="day24-task2">MLOps introduction (3
+                                hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 25 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 25</h2>
+                    <div class="date" id="date-day25"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day25-task1"> <label for="day25-task1">Monitoring models in
+                                production (drift detection) (3 hours)</label></li>
+                        <li><input type="checkbox" id="day25-task2"> <label for="day25-task2">Using Power BI/Tableau for
+                                business intelligence (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 26 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 26</h2>
+                    <div class="date" id="date-day26"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day26-task1"> <label for="day26-task1">Experimenting with AutoML
+                                tools (H2O.ai, Google AutoML) (3 hours)</label></li>
+                        <li><input type="checkbox" id="day26-task2"> <label for="day26-task2">Exploring advanced
+                                visualization techniques in Tableau/Power BI (3 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 27 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 27</h2>
+                    <div class="date" id="date-day27"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day27-task1"> <label for="day27-task1">Work on a capstone
+                                project, integrating everything you've learned (6 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 28 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 28</h2>
+                    <div class="date" id="date-day28"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day28-task1"> <label for="day28-task1">Capstone project
+                                continuation and refinement (6 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 29 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 29</h2>
+                    <div class="date" id="date-day29"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day29-task1"> <label for="day29-task1">Finalize the capstone
+                                project, prepare presentation/report (6 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 30 -->
+            <div class="day">
+                <div class="day-header">
+                    <h2>Day 30</h2>
+                    <div class="date" id="date-day30"></div>
+                </div>
+                <div class="day-content">
+                    <ul>
+                        <li><input type="checkbox" id="day30-task1"> <label for="day30-task1">Review and consolidate
+                                everything learned over the 30 days (6 hours)</label></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
