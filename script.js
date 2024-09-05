@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const isChecked = localStorage.getItem(checkbox.id) === 'true';
             checkbox.checked = isChecked;
             if (isChecked) {
+                checkbox.disabled = true; // Disable the checkbox if it's checked
                 checkbox.parentNode.style.textDecoration = 'line-through';
             } else {
                 checkbox.parentNode.style.textDecoration = 'none';
@@ -18,8 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function saveCheckboxState() {
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(checkbox => {
-            localStorage.setItem(checkbox.id, checkbox.checked);
             if (checkbox.checked) {
+                localStorage.setItem(checkbox.id, 'true'); // Save as checked in local storage
+                checkbox.disabled = true; // Disable the checkbox once checked
                 checkbox.parentNode.style.textDecoration = 'line-through';
             } else {
                 checkbox.parentNode.style.textDecoration = 'none';
@@ -103,20 +105,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Permanent date setting functionality for each day
+    const dateElements = document.querySelectorAll('.date');
+
+    // Check if the startDate is already set in localStorage
+    let startDate = localStorage.getItem('startDate');
+
+    if (!startDate) {
+        // If the startDate is not set, set it to the current date
+        const today = new Date();
+        startDate = today.toISOString().split('T')[0];
+        localStorage.setItem('startDate', startDate);
+    } else {
+        startDate = new Date(startDate);  // Convert the startDate to a Date object
+    }
+
+    // Assign the correct date for each day
+    dateElements.forEach((dateElement, index) => {
+        const dayDate = new Date(startDate);
+        dayDate.setDate(dayDate.getDate() + index); // Increment the date by the index
+        dateElement.textContent = dayDate.toISOString().split('T')[0]; // Set the date in YYYY-MM-DD format
+    });
+
     // Update the colors of the days on page load
     updateDayColors();
 });
-
-document.addEventListener('DOMContentLoaded', function() {
-    const dateElements = document.querySelectorAll('.date');
-
-    dateElements.forEach((dateElement, index) => {
-        // Create a new date object for the current date
-        const today = new Date();
-        // Format the date as YYYY-MM-DD
-        const formattedDate = today.toISOString().split('T')[0];
-        // Set the text content of the date element
-        dateElement.textContent = formattedDate;
-    });
-});
-
