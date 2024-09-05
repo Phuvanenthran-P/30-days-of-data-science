@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+
     // Function to load checkbox state from local storage
     function loadCheckboxState() {
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -24,12 +25,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 checkbox.parentNode.style.textDecoration = 'none';
             }
         });
+
+        // Update day colors after saving checkbox state
+        updateDayColors();
     }
 
-    // Function to unlock days based on current date
+    // Function to unlock days based on first login date
     function unlockDays() {
+        let startDate = localStorage.getItem('startDate');
+        
+        // If start date is not set, set it to the current date
+        if (!startDate) {
+            const today = new Date();
+            startDate = today.toISOString().split('T')[0];
+            localStorage.setItem('startDate', startDate);
+        }
+        
         const currentDate = new Date();
-        const startDate = new Date('2024-09-03'); // Start date
+        startDate = new Date(startDate);
         const dayDifference = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
         const currentDay = dayDifference + 1; // Add 1 to count today as Day 1
         
@@ -40,6 +53,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 day.style.display = 'block';
             } else {
                 day.style.display = 'none';
+            }
+        });
+
+        // Update day colors
+        updateDayColors();
+    }
+
+    // Function to update the colors of the days based on their status
+    function updateDayColors() {
+        const days = document.querySelectorAll('.day');
+        const currentDate = new Date();
+        const todayIndex = Math.floor((currentDate - new Date(localStorage.getItem('startDate'))) / (1000 * 60 * 60 * 24));
+
+        days.forEach((day, index) => {
+            const checkboxes = day.querySelectorAll('input[type="checkbox"]');
+            const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+            const anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+
+            if (index < todayIndex) {
+                // Completed days
+                day.style.backgroundColor = allChecked ? '#d4edda' : '#f8d7da'; // Green if completed, red if not
+            } else if (index === todayIndex) {
+                // Ongoing day
+                day.style.backgroundColor = '#fff3cd'; // Yellow
+            } else {
+                // Future days (locked)
+                day.style.backgroundColor = '#f9f9fb'; // Keep the default color
             }
         });
     }
@@ -62,6 +102,9 @@ document.addEventListener('DOMContentLoaded', function() {
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         });
     });
+
+    // Update the colors of the days on page load
+    updateDayColors();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
