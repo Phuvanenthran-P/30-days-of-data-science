@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const isChecked = localStorage.getItem(checkbox.id) === 'true';
             checkbox.checked = isChecked;
             if (isChecked) {
-                checkbox.disabled = true; // Disable the checkbox if it's checked
+                checkbox.disabled = true; // Disable the checkbox if checked
                 checkbox.parentNode.style.textDecoration = 'line-through';
             } else {
                 checkbox.parentNode.style.textDecoration = 'none';
@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function saveCheckboxState() {
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(checkbox => {
+            localStorage.setItem(checkbox.id, checkbox.checked);
             if (checkbox.checked) {
-                localStorage.setItem(checkbox.id, 'true'); // Save as checked in local storage
-                checkbox.disabled = true; // Disable the checkbox once checked
+                checkbox.disabled = true; // Disable the checkbox if checked
                 checkbox.parentNode.style.textDecoration = 'line-through';
             } else {
                 checkbox.parentNode.style.textDecoration = 'none';
@@ -53,6 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
         days.forEach((day, index) => {
             if (index < currentDay) {
                 day.style.display = 'block';
+                const dayDateElement = day.querySelector('.date');
+                if (dayDateElement) {
+                    const dayDate = new Date(startDate);
+                    dayDate.setDate(startDate.getDate() + index); // Increment date for each day
+                    dayDateElement.textContent = dayDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+                }
             } else {
                 day.style.display = 'none';
             }
@@ -78,7 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 day.style.backgroundColor = allChecked ? '#d4edda' : '#f8d7da'; // Green if completed, red if not
             } else if (index === todayIndex) {
                 // Ongoing day
-                day.style.backgroundColor = '#fff3cd'; // Yellow
+                if (allChecked) {
+                    day.style.backgroundColor = '#d4edda'; // Green if all checkboxes are checked
+                } else {
+                    day.style.backgroundColor = '#fff3cd'; // Yellow otherwise
+                }
             } else {
                 // Future days (locked)
                 day.style.backgroundColor = '#f9f9fb'; // Keep the default color
@@ -105,28 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Permanent date setting functionality for each day
-    const dateElements = document.querySelectorAll('.date');
-
-    // Check if the startDate is already set in localStorage
-    let startDate = localStorage.getItem('startDate');
-
-    if (!startDate) {
-        // If the startDate is not set, set it to the current date
-        const today = new Date();
-        startDate = today.toISOString().split('T')[0];
-        localStorage.setItem('startDate', startDate);
-    } else {
-        startDate = new Date(startDate);  // Convert the startDate to a Date object
-    }
-
-    // Assign the correct date for each day
-    dateElements.forEach((dateElement, index) => {
-        const dayDate = new Date(startDate);
-        dayDate.setDate(dayDate.getDate() + index); // Increment the date by the index
-        dateElement.textContent = dayDate.toISOString().split('T')[0]; // Set the date in YYYY-MM-DD format
-    });
-
     // Update the colors of the days on page load
     updateDayColors();
 });
+
